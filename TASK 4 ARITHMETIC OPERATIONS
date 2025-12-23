@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int x,y;
+    char op;
+    printf("Enter expression (example: 2 + 7): ");
+    scanf("%d %c %d", &x, &op, &y);
+
+    switch(op) {
+        case '+':
+            printf("Result = %d\n", x + y);
+            break;
+        case '-':
+            printf("Result = %d\n", x - y);
+            break;
+        case '*':
+            printf("Result = %d\n", x * y);
+            break;
+        case '/':
+            printf("Result = %d\n", x / y);
+            break;
+        default:
+            printf("Invalid operator");
+    }
+
+    return 0;
+}
