@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    char move;
+
+    printf("Snake Game Controls:\n");
+    printf("W - Up\nA - Left\nS - Down\nD - Right\nQ - Quit\n");
+
+    while (1) {
+        printf("Enter move: ");
+        scanf(" %c", &move);
+
+        if (move == 'q' || move == 'Q') {
+            printf("Game Over\n");
+            break;
+        } else {
+            printf("Snake moved: %c\n", move);
+        }
+    }
+
+    return 0;
+}
