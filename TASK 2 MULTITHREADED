@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <pthread.h>
+
+void* compress(void* arg) {
+    printf("File is compressing");
+    return NULL;
+}
+
+void* decompress(void* arg) {
+    printf("File is decompressing");
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+
+    pthread_create(&t1, NULL, compress, NULL);
+    pthread_create(&t2, NULL, decompress, NULL);
+
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    printf("Task completed);
+    return 0;
+}
