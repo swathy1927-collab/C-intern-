@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char text[50];
+
+    file = fopen("file.txt", "w");
+    if (file == NULL) {
+        printf("File cannot be created");
+        return 0;
+    }
+    fprintf(file, "Hello File");
+    fclose(file);
+
+    file = fopen("file.txt", "r");
+    if (file == NULL) {
+        printf("File cannot be opened");
+        return 0;
+    }
+    fscanf(file, "%s", text);
+    printf("%s", text);
+    fclose(file);
+
+    return 0;
+}
